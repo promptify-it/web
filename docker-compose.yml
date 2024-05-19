@@ -5,9 +5,6 @@ services:
     build:
       context: .
       dockerfile: ./docker/services/php/Dockerfile
-      args:
-        NOVA_USERNAME: ${NOVA_USERNAME}
-        NOVA_LICENSE_KEY: ${NOVA_LICENSE_KEY}
     working_dir: /var/www/html
     restart: always
     ports:
