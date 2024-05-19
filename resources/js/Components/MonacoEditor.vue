@@ -53,6 +53,7 @@ onMounted(async () => {
         uri: 'http://json-schema.org/draft-07/schema#',
         fileMatch: ['*'],
         schema: {
+          $schema: 'http://json-schema.org/draft-07/schema#',
           type: 'object',
           properties: {
             signature: {
@@ -70,41 +71,230 @@ onMounted(async () => {
                     type: 'object',
                     properties: {
                       type: {
-                        type: 'string',
                         enum: [
-                          'text-input',
                           'assign',
+                          'condition',
                           'file-template',
+                          'password-input',
+                          'select-input',
                           'shell',
+                          'text-input',
                         ],
                       },
                       content: {
                         type: 'object',
                         properties: {},
-                        allOf: [
-                          {
-                            if: {
-                              properties: {
-                                type: {
-                                  const: 'text-input',
-                                },
-                              },
+                      },
+                    },
+                    allOf: [
+                      {
+                        if: {
+                          properties: {
+                            type: {
+                              const: 'assign',
                             },
-                            then: {
+                          },
+                        },
+                        then: {
+                          properties: {
+                            type: {
+                              description: 'Assign a value to a key',
+                            },
+                            content: {
+                              type: 'object',
                               properties: {
-                                label: {
+                                key: {
                                   type: 'string',
+                                  description: 'The key to assign the value to',
                                 },
                                 value: {
                                   type: 'string',
+                                  description: 'The value to assign to the key',
                                 },
                               },
-                              required: ['label', 'value'],
+                              required: ['key', 'value'],
                             },
                           },
-                        ],
+                        },
                       },
-                    },
+                      {
+                        if: {
+                          properties: {
+                            type: {
+                              const: 'condition',
+                            },
+                          },
+                        },
+                        then: {
+                          properties: {
+                            content: {
+                              type: 'object',
+                              properties: {
+                                left: {
+                                  type: 'string',
+                                  description: 'The left side of the condition',
+                                },
+                                operator: {
+                                  enum: ['==', '!=', '>', '<', '>=', '<='],
+                                  description:
+                                    'The operator to use in the condition',
+                                },
+                                right: {
+                                  type: 'string',
+                                  description:
+                                    'The right side of the condition',
+                                },
+                              },
+                              required: ['left', 'operator', 'right'],
+                            },
+                          },
+                        },
+                      },
+                      {
+                        if: {
+                          properties: {
+                            type: {
+                              const: 'file-template',
+                            },
+                          },
+                        },
+                        then: {
+                          content: {
+                            type: 'object',
+                            properties: {
+                              template: {
+                                type: 'array',
+                                description: 'File lines of the template',
+                                items: {
+                                  type: 'string',
+                                  description: 'A line of the file template',
+                                },
+                              },
+                              output: {
+                                type: 'string',
+                                description: 'The output file path',
+                              },
+                            },
+                            required: ['template', 'output'],
+                          },
+                        },
+                      },
+                      {
+                        if: {
+                          properties: {
+                            type: {
+                              const: 'password-input',
+                            },
+                          },
+                        },
+                        then: {
+                          properties: {
+                            content: {
+                              type: 'object',
+                              properties: {
+                                label: {
+                                  type: 'string',
+                                  description:
+                                    'The label of the password input',
+                                },
+                                key: {
+                                  type: 'string',
+                                  description: 'The key to assign the value to',
+                                },
+                              },
+                              required: ['label', 'key'],
+                            },
+                          },
+                        },
+                      },
+                      {
+                        if: {
+                          properties: {
+                            type: {
+                              const: 'select-input',
+                            },
+                          },
+                        },
+                        then: {
+                          properties: {
+                            content: {
+                              type: 'object',
+                              properties: {
+                                label: {
+                                  type: 'string',
+                                  description: 'The label of the select input',
+                                },
+                                key: {
+                                  type: 'string',
+                                  description: 'The key to assign the value to',
+                                },
+                                options: {
+                                  type: 'array',
+                                  description:
+                                    'The options of the select input',
+                                  items: {
+                                    type: 'string',
+                                    description:
+                                      'An option of the select input',
+                                  },
+                                },
+                              },
+                              required: ['label', 'key', 'options'],
+                            },
+                          },
+                        },
+                      },
+                      {
+                        if: {
+                          properties: {
+                            type: {
+                              const: 'shell',
+                            },
+                          },
+                        },
+                        then: {
+                          properties: {
+                            content: {
+                              type: 'object',
+                              properties: {
+                                script: {
+                                  type: 'string',
+                                  description: 'The shell script to run',
+                                },
+                              },
+                              required: ['script'],
+                            },
+                          },
+                        },
+                      },
+                      {
+                        if: {
+                          properties: {
+                            type: {
+                              const: 'text-input',
+                            },
+                          },
+                        },
+                        then: {
+                          properties: {
+                            content: {
+                              type: 'object',
+                              properties: {
+                                label: {
+                                  type: 'string',
+                                  description: 'The label of the text input',
+                                },
+                                key: {
+                                  type: 'string',
+                                  description: 'The key to assign the value to',
+                                },
+                              },
+                              required: ['label', 'key'],
+                            },
+                          },
+                        },
+                      },
+                    ],
                     required: ['type', 'content'],
                   },
                 },
