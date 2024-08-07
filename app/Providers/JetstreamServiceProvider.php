@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Providers;
+namespace Pfy\Web\Providers;
 
-use App\Actions\Jetstream\AddTeamMember;
-use App\Actions\Jetstream\CreateTeam;
-use App\Actions\Jetstream\DeleteTeam;
-use App\Actions\Jetstream\DeleteUser;
-use App\Actions\Jetstream\InviteTeamMember;
-use App\Actions\Jetstream\RemoveTeamMember;
-use App\Actions\Jetstream\UpdateTeamName;
+use Pfy\Web\Actions\Jetstream\AddTeamMember;
+use Pfy\Web\Actions\Jetstream\CreateTeam;
+use Pfy\Web\Actions\Jetstream\DeleteTeam;
+use Pfy\Web\Actions\Jetstream\DeleteUser;
+use Pfy\Web\Actions\Jetstream\InviteTeamMember;
+use Pfy\Web\Actions\Jetstream\RemoveTeamMember;
+use Pfy\Web\Actions\Jetstream\UpdateTeamName;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
 

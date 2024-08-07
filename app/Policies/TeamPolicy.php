@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Policies;
+namespace Pfy\Web\Policies;
 
-use App\Models\Team;
-use App\Models\User;
+use Pfy\Web\Models\Team;
+use Pfy\Web\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class TeamPolicy

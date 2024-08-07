@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Inertia\CommandController;
+use Pfy\Web\Http\Controllers\Inertia\CommandController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 

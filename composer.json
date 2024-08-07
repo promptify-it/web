@@ -1,10 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "promptify-it/web",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
-        "laravel",
-        "framework"
+        "promptify",
+        "promptify-it",
+        "pfy"
     ],
     "license": "MIT",
     "require": {
@@ -29,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
+            "Pfy\\Web\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

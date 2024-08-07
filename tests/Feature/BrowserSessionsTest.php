@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use Pfy\Web\Models\User;
 
 test('other browser sessions can be logged out', function () {
     $this->actingAs($user = User::factory()->create());

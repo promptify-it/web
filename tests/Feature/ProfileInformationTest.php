@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use Pfy\Web\Models\User;
 
 test('profile information can be updated', function () {
     $this->actingAs($user = User::factory()->create());

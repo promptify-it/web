@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Actions\Jetstream;
+namespace Pfy\Web\Actions\Jetstream;
 
-use App\Models\Team;
-use App\Models\User;
+use Pfy\Web\Models\Team;
+use Pfy\Web\Models\User;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\ValidationException;

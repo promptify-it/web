@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use Pfy\Web\Models\User;
 use Laravel\Jetstream\Features;
 
 test('user accounts can be deleted', function () {

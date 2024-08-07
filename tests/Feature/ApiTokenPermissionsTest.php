@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use Pfy\Web\Models\User;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;
 

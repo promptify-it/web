@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Actions\Fortify;
+namespace Pfy\Web\Actions\Fortify;
 
-use App\Models\Team;
-use App\Models\User;
+use Pfy\Web\Models\Team;
+use Pfy\Web\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Inertia;
+namespace Pfy\Web\Http\Controllers\Inertia;
 
-use App\Http\Controllers\Controller;
-use App\Models\Command;
+use Pfy\Web\Http\Controllers\Controller;
+use Pfy\Web\Models\Command;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;

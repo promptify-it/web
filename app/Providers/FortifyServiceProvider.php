@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Providers;
+namespace Pfy\Web\Providers;
 
-use App\Actions\Fortify\CreateNewUser;
-use App\Actions\Fortify\ResetUserPassword;
-use App\Actions\Fortify\UpdateUserPassword;
-use App\Actions\Fortify\UpdateUserProfileInformation;
+use Pfy\Web\Actions\Fortify\CreateNewUser;
+use Pfy\Web\Actions\Fortify\ResetUserPassword;
+use Pfy\Web\Actions\Fortify\UpdateUserPassword;
+use Pfy\Web\Actions\Fortify\UpdateUserProfileInformation;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;

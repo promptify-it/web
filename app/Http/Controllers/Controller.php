@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Pfy\Web\Http\Controllers;
 
 abstract class Controller
 {

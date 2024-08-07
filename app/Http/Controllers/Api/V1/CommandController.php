@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;
+namespace Pfy\Web\Http\Controllers\Api\V1;
 
-use App\Http\Controllers\Controller;
+use Pfy\Web\Http\Controllers\Controller;
 
 class CommandController extends Controller
 {

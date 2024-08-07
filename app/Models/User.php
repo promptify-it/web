@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Pfy\Web\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace Pfy\Web\Providers;
 
-use App\Models\PersonalAccessToken;
+use Pfy\Web\Models\PersonalAccessToken;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Sanctum\Sanctum;
