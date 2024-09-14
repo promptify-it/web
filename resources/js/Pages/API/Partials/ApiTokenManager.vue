@@ -125,9 +125,10 @@ const deleteApiToken = () => {
                   v-model:checked="createApiTokenForm.permissions"
                   :value="permission"
                 />
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{
-                  permission
-                }}</span>
+                <span
+                  class="ms-2 text-sm text-neutral-600 dark:text-neutral-400"
+                  >{{ permission }}</span
+                >
               </label>
             </div>
           </div>
@@ -174,13 +175,16 @@ const deleteApiToken = () => {
                 </div>
 
                 <div class="ms-2 flex items-center">
-                  <div v-if="token.last_used_ago" class="text-sm text-gray-400">
+                  <div
+                    v-if="token.last_used_ago"
+                    class="text-sm text-neutral-400"
+                  >
                     Last used {{ token.last_used_ago }}
                   </div>
 
                   <button
                     v-if="availablePermissions.length > 0"
-                    class="ms-6 cursor-pointer text-sm text-gray-400 underline"
+                    class="ms-6 cursor-pointer text-sm text-neutral-400 underline"
                     @click="manageApiTokenPermissions(token)"
                   >
                     Permissions
@@ -212,7 +216,7 @@ const deleteApiToken = () => {
 
         <div
           v-if="$page.props.jetstream.flash.token"
-          class="mt-4 break-all rounded bg-gray-100 px-4 py-2 font-mono text-sm text-gray-500 dark:bg-gray-900"
+          class="mt-4 break-all bg-neutral-100 px-4 py-2 font-mono text-sm text-neutral-500 dark:bg-neutral-950"
         >
           {{ $page.props.jetstream.flash.token }}
         </div>
@@ -240,9 +244,9 @@ const deleteApiToken = () => {
                 v-model:checked="updateApiTokenForm.permissions"
                 :value="permission"
               />
-              <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{
-                permission
-              }}</span>
+              <span class="ms-2 text-sm text-neutral-600 dark:text-neutral-400">
+                {{ permission }}
+              </span>
             </label>
           </div>
         </div>

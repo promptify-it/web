@@ -2,10 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-[x-cloak] {
-    display: none;
+html, body {
+  @apply bg-white dark:bg-neutral-950;
 }
 
-html {
-    @apply bg-white dark:bg-gray-900;
+
+#app {
+  @apply z-10 relative; 
+}
+
+[x-cloak] {
+  display: none;
 }
